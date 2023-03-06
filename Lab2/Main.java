@@ -2,17 +2,20 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        Location locatie1 = new Location("New York", LocationType.AIRPORT, 100, 200);
-        Location locatie2 = new Location("Atena", LocationType.CITY, 123, 722);
-        Road drum1 = new Road(RoadType.HIGHWAY, 100, 60);
-        System.out.println(locatie1.x + " " + locatie1.y + " " + locatie1.tip + " " + locatie1.name); //afisam locatie
-        System.out.println(locatie1.getName());
-        locatie1.setCoord(555, 666);
-        locatie1.setName("Texas");
-        System.out.println(locatie1.getTip());
-        System.out.println(locatie1.getName());
-        locatie1.setTip(LocationType.GAS_STATION);
-        System.out.println(locatie2.toString());
-        System.out.println("Limita drumului de tip " + drum1.getType() + " este " + drum1.getSpeedLimit());
+        City locatie1 = new City("Atena", 100, 200,10000);
+        City locatie2 = new City("Atenda",1030, 200,50000);
+        System.out.println("rasp e: "+ locatie1.equals(locatie2));
+        Highway drum1 = new Highway("DN3",30, 5,30,12);
+        Express drum2 = new Express("DN11",100, 1000,12);
+        System.out.println("drumurile: "+ drum1.equals(drum2));
+        Problem problem1=new Problem();
+        problem1.addRoads(drum1);
+        problem1.addRoads(drum1);
+        problem1.addRoads(drum2);
+        problem1.addLocations(locatie2);
+        problem1.addLocations(locatie1);
+        System.out.println(problem1.isValid());
+        System.out.println(problem1.existsRoute());
+
     }
 }
