@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Catalog implements Serializable {
-    private String name;
-    private List<Document> docs = new ArrayList<>();
+    public String name;
+    public List<Document> docs = new ArrayList<>();
 public Catalog(String name){
     this.name=name;
 }
