@@ -16,7 +16,8 @@ public class Document implements Serializable {
         this.title = title;
         this.location = location;
     }
-
+public Document(){
+}
 
     private Map<String, Object> tags = new HashMap<>();
 
