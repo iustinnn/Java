@@ -9,6 +9,8 @@ public class Catalog implements Serializable {
 public Catalog(String name){
     this.name=name;
 }
+    public Catalog(){
+    }
     //…
     public void add(Document doc) {
         docs.add(doc);
