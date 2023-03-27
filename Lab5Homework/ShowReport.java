@@ -17,6 +17,9 @@ import java.util.Map;
 
 
 public class ShowReport implements Comanda {
+    public ShowReport() {
+    }
+
     public void show(Catalog catalog) {
         Configuration cfg = new Configuration(Configuration.VERSION_2_3_32);
         try {
@@ -26,6 +29,8 @@ public class ShowReport implements Comanda {
             System.out.println("Eroare de sintaxa pentru URI.");
         } catch (IOException e) {
             System.out.println("Eroare de tip IO.");
+        }catch (IllegalArgumentException e){
+            System.out.println("Argument ilegal.");
         }
         cfg.setDefaultEncoding("UTF-8");
         cfg.setLogTemplateExceptions(false);
