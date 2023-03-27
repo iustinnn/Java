@@ -20,7 +20,7 @@ public class ShowReport implements Comanda {
     public ShowReport() {
     }
 
-    public void show(Catalog catalog) {
+    public void run(Catalog catalog,Object ...args) {
         Configuration cfg = new Configuration(Configuration.VERSION_2_3_32);
         try {
             cfg.setDirectoryForTemplateLoading(
