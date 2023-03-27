@@ -1,5 +1,6 @@
 package org.example;
 
+import javax.print.Doc;
 import java.lang.Enum;
 import java.awt.Desktop;
 import java.io.File;
@@ -12,28 +13,29 @@ public class ViewCommand implements Comanda {
 
     }
 
-    public void view(Catalog catalog, Document document) {
-        Desktop desk = Desktop.getDesktop();
-        try {
-            if (document.getLocation().substring(0, 4).equals("http")) {
-                URI uri = null;
-                uri = new URI(document.getLocation());
-                desk.browse(uri);
-            } else if (document.getLocation().substring(0, 11).equals("C:\\Windows")) {
-                throw new LocationAccesDenied("Fisiere din partitia C:\\Windows sunt protejate.");
-            } else {
-                desk.open(new File(document.getLocation()));
+    public void run(Catalog catalog, Object... args) {
+        if (args.length == 1) {
+            Document document = (Document) args[0];
+            Desktop desk = Desktop.getDesktop();
+            try {
+                if (document.getLocation().substring(0, 4).equals("http")) {
+                    URI uri = null;
+                    uri = new URI(document.getLocation());
+                    desk.browse(uri);
+                } else if (document.getLocation().substring(0, 11).equals("C:\\Windows")) {
+                    throw new LocationAccesDenied("Fisiere din partitia C:\\Windows sunt protejate.");
+                } else {
+                    desk.open(new File(document.getLocation()));
+                }
+            } catch (URISyntaxException e) {
+                System.out.println("Eroare de sintaxa");
+            } catch (IllegalArgumentException e) {
+                System.out.println("Path-ul nu este corect.");
+            } catch (IOException e) {
+                System.out.println("Eroare la deschiderea fisierului.");
+            } catch (LocationAccesDenied e) {
+                System.out.println("!!!Acces Denied");
             }
-        } catch (URISyntaxException e) {
-            System.out.println("Eroare de sintaxa");
-        } catch (IllegalArgumentException e) {
-            System.out.println("Path-ul nu este corect.");
-        } catch (IOException e) {
-            System.out.println("Eroare la deschiderea fisierului.");
-        }
-        catch (LocationAccesDenied e)
-        {
-            System.out.println("!!!Acces Denied");
         }
     }
 
