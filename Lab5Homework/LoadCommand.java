@@ -9,10 +9,12 @@ public class LoadCommand implements Comanda {
     public LoadCommand() {
         System.out.println("Comanda initializata.");
     }
+    public void run(Catalog catalog,Object ...args){
+        System.out.println("Comanda este gresita.");
 
-    public static Catalog load(String path)
+    }
+    public Catalog run(Catalog catalog,String path)
             throws InvalidCatalogException, IOException {
-        Catalog catalog=null;
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             catalog = objectMapper.readValue(
