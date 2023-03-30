@@ -1,6 +1,8 @@
 package org.example;
 
-import com.fasterxml.jackson.core.exc.StreamReadException;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
@@ -17,12 +19,9 @@ public abstract class CatalogUtil {
         }
     }
 
-    public static Catalog load(String path)
-            throws InvalidCatalogException, IOException {
+    public static Catalog load(String path) throws InvalidCatalogException, IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        Catalog catalog = objectMapper.readValue(
-                new File(path),
-                Catalog.class);
+        Catalog catalog = objectMapper.readValue(new File(path), Catalog.class);
         return catalog;
     }
 

@@ -9,24 +9,21 @@ public class LoadCommand implements Comanda {
     public LoadCommand() {
         System.out.println("Comanda initializata.");
     }
-    public void run(Catalog catalog,Object ...args){
+
+    public void run(Catalog catalog, Object... args) {
         System.out.println("Comanda este gresita.");
 
     }
-    public Catalog run(Catalog catalog,String path)
-            throws InvalidCatalogException, IOException {
+
+    public Catalog run(Catalog catalog, String path) throws InvalidCatalogException, IOException {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            catalog = objectMapper.readValue(
-                    new File(path),
-                    Catalog.class);
-            if(catalog.docs.size()<1)throw new InvalidCatalogException(); //eroarea catalogului
+            catalog = objectMapper.readValue(new File(path), Catalog.class);
+            if (catalog.docs.size() < 1) throw new InvalidCatalogException(); //eroarea catalogului
         } catch (InvalidCatalogException e) {
             System.out.println("Catalogul este gol.");
-        }
-        finally {
+        } finally {
             return catalog;
         }
-
     }
 }

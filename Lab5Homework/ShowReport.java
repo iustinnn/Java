@@ -20,16 +20,15 @@ public class ShowReport implements Comanda {
     public ShowReport() {
     }
 
-    public void run(Catalog catalog,Object ...args) {
+    public void run(Catalog catalog, Object... args) {
         Configuration cfg = new Configuration(Configuration.VERSION_2_3_32);
         try {
-            cfg.setDirectoryForTemplateLoading(
-                    new File(Main.class.getResource("/templates").toURI()));
+            cfg.setDirectoryForTemplateLoading(new File(Main.class.getResource("/templates").toURI()));
         } catch (URISyntaxException e) {
             System.out.println("Eroare de sintaxa pentru URI.");
         } catch (IOException e) {
             System.out.println("Eroare de tip IO.");
-        }catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             System.out.println("Argument ilegal.");
         }
         cfg.setDefaultEncoding("UTF-8");
@@ -58,8 +57,7 @@ public class ShowReport implements Comanda {
             }
             bufferedWriter.close();
             fileWriter.close();
-        } catch (
-                TemplateException e) {
+        } catch (TemplateException e) {
             System.out.println("Probleme la procesarea template-ului.");
         } catch (IOException e) {
             System.out.println("Eroare de tip IO la scrierea in index.html.");

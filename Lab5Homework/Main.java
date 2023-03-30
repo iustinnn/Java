@@ -44,8 +44,8 @@ public class Main {
     private void testLoadView() throws InvalidCatalogException, IOException {
         try {
             LoadCommand loadCommand = new LoadCommand();
-            Catalog catalogTemporar=new Catalog();
-            catalogTemporar=loadCommand.run(catalogTemporar, "C:\\Users\\pc\\Desktop\\Materii\\catalogNouu.json");
+            Catalog catalogTemporar = new Catalog();
+            catalogTemporar = loadCommand.run(catalogTemporar, "C:\\Users\\pc\\Desktop\\Materii\\catalogNouu.json");
             System.out.println("Catalogul loadat tocmai a primit datele" + catalogTemporar.docs);
         } catch (InvalidCatalogException e) {
             System.out.println("File not found");
