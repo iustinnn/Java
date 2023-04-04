@@ -13,7 +13,7 @@ public class ConfigPanel extends JPanel {
         this.frame = frame;
         init();
     }
-    private void init() {
+    public void init() {
         //create the label and the spinner
         dotsLabel = new JLabel("Number of dots:");
         dotsSpinner = new JSpinner(new SpinnerNumberModel(6, 3, 100, 1));

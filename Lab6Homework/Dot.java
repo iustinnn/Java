@@ -1,8 +1,9 @@
 package org.example;
 
 import java.awt.*;
+import java.io.Serializable;
 
-public class Dot {
+public class Dot implements Serializable {
     private int x;
     private int y;
     public static int index = 1;

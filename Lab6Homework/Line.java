@@ -1,17 +1,19 @@
 package org.example;
 
 import java.awt.*;
+import java.io.Serializable;
 
-public class Line {
-    private Dot dot1;
-    private Dot dot2;
+public class Line implements Serializable {
+    public Dot dot1;
+    public Dot dot2;
     private boolean isSelected;
-    private Color color;
+    public Color color;
 
     public Line(Dot dot1, Dot dot2) {
         this.dot1 = dot1;
         this.dot2 = dot2;
         this.isSelected = false;
+        color=Color.BLACK;
     }
 
     public Dot getDot1() {

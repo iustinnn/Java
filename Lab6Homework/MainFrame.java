@@ -14,7 +14,6 @@ public class MainFrame extends JFrame {
         super("My Drawing Application");
         init();
     }
-
     private void init() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         controlPanel = new ControlPanel(this);
