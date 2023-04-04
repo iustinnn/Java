@@ -3,4 +3,5 @@
  * De fiecare data cand este apasata o linie si este colorata, va fi generata o noua imagine drawing.png. (Functioneaza bine)
  * Save-ul functioneaza bine si salveaza liniile, cu culori aferente si punctele. Problema este la Load, care incarca graful salvat si il afiseaza corect pe ecran, dar il suprapune peste ce era, si la click se sterge...(Aici am gresit eu ceva, am incercat sa sterg imaginea care era inainte, dar nu a functioneaza asta bine (am gresit eu putin cum am gandit clasele si apelez functia de recolorare in clasa de ControlPa  nel si cred ca aici e problema))
  * Homework - jocul functioneaza, PNG-ul functioneaza, Save-ul functioneaza, Load-ul afiseaza pe ecran ce era saved, doar ca nu sterge ce era inainte si cand se clickuieste sunt probleme
+ * https://www.youtube.com/watch?v=8ZtKosHRr3I&ab_channel=Iustin
 
