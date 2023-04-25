@@ -3,7 +3,7 @@ package org.example;
 import java.sql.*;
 
 public class Database {
-    private static final String URL = "jdbc:postgresql://localhost:5432/postgres";
+    private static final String URL = "jdbc:postgresql://localhost:5432/lab8";
     private static final String USER = "postgres";
     private static final String PASSWORD = "hcadds646";
     private static Connection connection = null;

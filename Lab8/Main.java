@@ -6,16 +6,8 @@ public class Main {
             var artists = new ArtistDAO();
             artists.create("Pink Floyd");
             artists.create("Michael Jackson");
-            /*
-            var genres = new GenreDAO();
-            genres.create("Rock"); //TODO: Funk, Soul, Pop
-            Database.getConnection().commit();
-            var albums = new AlbumDAO();
-            albums.create(1979, "The Wall", "Pink Floyd", "Rock");
-            //findByName
-            albums.create(1982, "Thriller", "Michael Jackson","Funk,Soul,Pop"
-            */
-
+            System.out.println(artists.findByName("Michael Jackson"));
+            System.out.println(artists.findById(2));
                     Database.getConnection().commit();
             Database.getConnection().close();
         } catch (SQLException e) {
