@@ -3,3 +3,5 @@ Homework - am facut clasele, cat si comenzile create game, join game, submit mov
 Cand al treilea jucatorul incearca sa intre intr-un joc ce are deja 2 useri, nu va putea.
 Ca si timp, fiecare user are disponibile pe mutare 5 secunde, dupa care se va afisa in server faptul ca jocul s-a oprit. (aici ar fi trebuit imbunatatit)
 Tabla de 15x15 functioneaza, iar cand sunt 5 in linie, castigatorul va primi mesaj.
+https://youtu.be/XzsBHo_nQkk
+![image](https://github.com/iustinnn/Java/assets/98700219/3a7e31a1-d3de-4774-9a85-b47900e8e69e)
